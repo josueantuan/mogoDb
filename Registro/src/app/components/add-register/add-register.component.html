@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header">
+    Registro
+  </div>
+  <div class="card-body" >
+    <form>
+      <div class="form-group">
+        <label for="title">Nombre:</label>
+        <input type="text" class="form-control" name="name" [(ngModel)]="name" > 
+      </div>
+      <div class="form-group">
+        <label for="description">Cédula:</label>
+        <input type="text" class="form-control" name="ced" [(ngModel)]="ced"> 
+      </div>
+      <div class="form-group">
+        <label for="description">Numero de Teléfono:</label>
+        <input type="text" class="form-control" name="telf" [(ngModel)]="telf"> 
+      </div>
+      <input type="submit" value="Registrar" class="btn btn-primary" (click)="addRegist($event)">
+     
+    </form>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cédula</th>
+      <th>Teléfono</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let registro of registros">   
+    <td>
+      {{registro.name}}
+    </td>  
+    <td>
+      {{registro.ced}}
+    </td>
+    <td>
+      {{registro.telf}}
+    </td>  
+    <td>
+      <button class="btn btn-danger" (click)="deleteRegister(registro._id)">
+        <i class="fa fa-trash"></i>
+      </button>
+    </td>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cédula</th>
+      <th>Teléfono</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let registro of registros">   
+    <td>
+      {{registro.name}}
+    </td>  
+    <td>
+      {{registro.ced}}
+    </td>
+    <td>
+      {{registro.telf}}
+    </td>  
+    <td>
+      <button class="btn btn-danger" (click)="deleteRegister(registro._id)">
+        <i class="fa fa-trash"></i>
+      </button>
+    </td>
+  </tbody>
+</table>
+
